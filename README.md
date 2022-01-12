@@ -1,6 +1,6 @@
 # Elementary Dart-Flutter for Beginners
 
-## Are you an absolute beginner with no codeing background? But you want to learn coding and, at the same time, you want to build a Mobile Application. Then this book will definitely help you. Firstly, will teach you how to code in Dart Programming language. Secondly, it will teach you how to implement your Dart programming knowledge to build Mobile Applications using the Flutter Framework.
+## Are you an absolute beginner with no codeing background? But you want to learn coding and, at the same time, you want to build a Mobile Application. Then this book will definitely help you. Firstly, it will teach you how to code in Dart Programming language. Secondly, it will teach you how to implement your Dart programming knowledge to build Mobile Applications using the Flutter Framework. Finally, this book will discuss the core conceptions in a great detail, so that as a beginner you can move forward from lesser known facts to the unknown facts. Once you understand the core concepts, you can build any application that you want to build.
 
 ### This code repository is for the book, I've mentioned above. I've been writing it in Leanpub. Every chapter is connected to respective branch. Therefore while reading the book please follow the code repository and practice them accordingly.
 
