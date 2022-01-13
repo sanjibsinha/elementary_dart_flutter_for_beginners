@@ -7,7 +7,7 @@ void main() {
   printAListOfInteger(list);
 }
 /**
-// it's fine
+// Both the code below will work fine
 
 void main() {
   var list = <int>[];
