@@ -7,6 +7,14 @@ void main() {
   printAListOfInteger(list);
 }
 /**
+void main() {
+  var list = <int>[];
+  list.add(1);
+  list.add(2);
+  printAListOfInteger(list);
+}
+
+
  * 💪 Running with sound null safety 💪
 Connecting to VM Service at ws://127.0.0.1:33047/ToG8jrELdFw=/ws
 [1, 2]
