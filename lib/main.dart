@@ -1,53 +1,18 @@
-import 'package:flutter/material.dart';
+void printAListOfInteger(List<int> a) => print(a);
 
-void main(List<String> args) {
-  runApp(const MyApp(
-    title: null,
-  ));
+void main() {
+  List<int> list = [];
+  list.add(1);
+  list.add(2);
+  printAListOfInteger(list);
 }
+/**
+ * 💪 Running with sound null safety 💪
+Connecting to VM Service at ws://127.0.0.1:33047/ToG8jrELdFw=/ws
+[1, 2]
+Restarted application in 519ms.
+[1, 2]
+Restarted application in 244ms.
+[1, 2]
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key, required this.title}) : super(key: key);
-
-  final String? title;
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'It can\'t be NULL',
-      home: MyHomePage(title: null),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  final String? title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          title != null ? 'It\'s not NULL value' : 'It\'s a NULL value',
-        ),
-      ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          child: Text(
-            title != null ? 'It\'s not NULL value' : 'It\'s a NULL value',
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+ */
