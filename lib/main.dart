@@ -7,6 +7,8 @@ void main() {
   printAListOfInteger(list);
 }
 /**
+// it's fine
+
 void main() {
   var list = <int>[];
   list.add(1);
