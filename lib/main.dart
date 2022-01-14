@@ -1,18 +1,58 @@
-void printAListOfInteger(List<int> a) => print(a);
+import 'package:flutter/material.dart';
+
+/// how we can use Dart built in types in Flutter
+/// here is a simple demonstration for beginners
 
 void main() {
-  List<int> list = [];
-  list.add(1);
-  list.add(2);
-  printAListOfInteger(list);
+  runApp(const MyApp());
 }
-/**
- * 💪 Running with sound null safety 💪
-Connecting to VM Service at ws://127.0.0.1:33047/ToG8jrELdFw=/ws
-[1, 2]
-Restarted application in 519ms.
-[1, 2]
-Restarted application in 244ms.
-[1, 2]
 
- */
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      /// using String type
+      title: 'Dart Built in Types',
+
+      /// using Boolean type
+      debugShowCheckedModeBanner: false,
+      home: MyAppHome(),
+    );
+  }
+}
+
+class MyAppHome extends StatelessWidget {
+  const MyAppHome({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        /// using String type
+        title: const Text('Dart Built in Types'),
+      ),
+      body: Center(
+        child: Row(
+          children: [
+            Container(
+              /// using type double
+              padding: const EdgeInsets.all(10.0),
+
+              /// using String type
+              child: const Text('First Row'),
+            ),
+            Container(
+              /// using type double
+              padding: const EdgeInsets.all(10.0),
+
+              /// using String type
+              child: const Text('First Row'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
