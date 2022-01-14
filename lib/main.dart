@@ -34,11 +34,15 @@ class MyAppHome extends StatelessWidget {
         title: const Text('Dart Built in Types'),
       ),
       body: Center(
+        /// using type List
         child: Row(
           children: [
             Container(
               /// using type double
+              ///
+              margin: const EdgeInsets.all(20.0),
               padding: const EdgeInsets.all(10.0),
+              color: Colors.lime,
 
               /// using String type
               child: const Text('First Row'),
@@ -46,9 +50,10 @@ class MyAppHome extends StatelessWidget {
             Container(
               /// using type double
               padding: const EdgeInsets.all(10.0),
+              color: Colors.amber,
 
               /// using String type
-              child: const Text('First Row'),
+              child: const Text('Second Row'),
             ),
           ],
         ),
