@@ -18,11 +18,11 @@ void main() {
   bool isFalse = false;
   /// dead code
   if (isFalse || isTrue) {
-    print("It is true.");
+    print("True.");
   }
   /// dead code
   /* if (isFalse && isTrue) {
-    print("It is true.");
+    print("False");
   } */ */
 }
 // output
