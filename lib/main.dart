@@ -16,6 +16,7 @@ void main() {
 
   /* bool isTrue = true;
   bool isFalse = false;
+  /// dead code
   if (isFalse || isTrue) {
     print("It is true.");
   }
