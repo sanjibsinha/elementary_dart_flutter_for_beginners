@@ -25,5 +25,3 @@ void main() {
     print("False");
   } */ */
 }
-// output
-//It is true.
