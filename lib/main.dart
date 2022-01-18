@@ -2,52 +2,27 @@
 /// here is a simple demonstration for beginners
 
 void main() {
-  bool? toBe = true;
-  bool? notToBe = false;
-
-  /// isExisting becomes false
-  bool? isExisting = toBe && notToBe;
-
-  if (isExisting) {
-    /// since this part only works if this condition is true
-    /// this part of code won't be executed
-    print('I exist.');
-  } else {
-    /// this will be executed
-    print('I don\'t exist.');
-  }
-
-  /// doIExist becomes true
-
-  bool? doIExist = toBe || notToBe;
-  if (doIExist) {
-    /// since this part only works if this condition is true
-    /// this part of code will be executed
-    print('I exist.');
-  } else {
-    print('I don\'t exist.');
-  }
-
-  /*
-  bool good = true;
-  bool bad = false;
-  they are considered to be dead code
-   if(good || bad) {
-
-  } 
-  if(good && bad) {
-
-  }
-  */
-
-  /* bool isTrue = true;
-  bool isFalse = false;
-  /// dead code
-  if (isFalse || isTrue) {
-    print("True.");
-  }
-  /// dead code
-  /* if (isFalse && isTrue) {
-    print("False");
-  } */ */
+  String? dart = 'Dart for Flutter';
+  print(dart);
+  String? newdart = dart.substring(0, 5);
+  print(newdart);
+  String? anExampleOfConcatenation = 'Dart ' + 'for ' + 'Flutter';
+  print(anExampleOfConcatenation);
+  String? anotherExampleOfConcatenation = 'Dart ' 'for ' 'Flutter';
+  print(anotherExampleOfConcatenation);
+  String? anExampleOfInterploation = anotherExampleOfConcatenation;
+  print('$anExampleOfInterploation is of '
+      '${anExampleOfInterploation.length} characters');
 }
+
+/**
+ * /// output
+
+Dart for Flutter
+Dart 
+Dart for Flutter
+Dart for Flutter
+Dart for Flutter is of 16 characters
+
+///
+ */
