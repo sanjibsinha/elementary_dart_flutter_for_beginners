@@ -1,56 +1,47 @@
-/// how we can use Dart built in types in Flutter
-/// here is a simple demonstration for beginners
-
 void main() {
-  var fruitCollection = {'Mango', 'Apple', 'Jack fruit'};
-  print(fruitCollection.lookup('Apple'));
-  var anotherFruitCollection = {'Mango', 'Apple', 'Jack fruit'};
-  print(anotherFruitCollection.lookup('Something Else'));
-  var myInteger = {};
-  if (myInteger.isEmpty) {
-    print("It is a map that has no key, value pair.");
-  } else
-    print("It is a set that has no key, value pair.");
-
-  var actors = {
-    'first': 'De Nero',
-    'second': 'Pacino',
-    'third': 'Willis',
-    'fourth': 'Morgan',
-    'fifth': 'Hackman',
-    1: 'Someone Else',
-  };
-  print(actors[1]);
-  Map<int, String> maps = {};
-  maps[1] = 'First';
-
-  /// maps['1'] = 'First';
-  /// The argument type 'String' can't be assigned to the parameter type 'int'.
-
-  Map<dynamic, dynamic> myProducts = {};
-  myProducts['first'] = 'TV';
-  myProducts[2] = 'Mobile';
-  myProducts['third'] = 'Refrigerator';
-  if (myProducts.containsValue('Mobile')) {
-    print('Our products have ${myProducts[2]}');
+  int? x;
+  int? y;
+  if (x == y) {
+    print('Both $x and $y are NULL');
   }
-  var myProductsOne = {'final': 3, ...myProducts};
-  if (myProductsOne.containsValue('Mobile')) {
-    print('Our products have ${myProductsOne[2]}');
+  int? m = 10;
+  int? n = 20;
+  if (m == n || m != n) {
+    // False OR True => **TRUE** will prevail
+    print('Both $m and $n have unequal value');
+  } else {
+    print('Both $m and $n have equal value');
   }
-  if (myProductsOne.containsValue(3)) {
-    print('Our products have ${myProductsOne['final']}');
+  // Output: Both 10 and 20 have unequal value
+  int? a = 5;
+  int? b = 5;
+  if (a == b || a != b) {
+    // True OR False => **TRUE** will prevail
+    print('Both $a and $b have equal value');
+  } else {
+    print('Both $a and $b have unequal value');
   }
-// Our products have Mobile
-// Our products have Mobile
-// Our products have Mobile
-// Our products have 3
+  // output: Both 5 and 5 have equal value
+  if ((a == b || a != b) && a != b) {
+    // True AND False => **FALSE** will prevail
+    print('If part will work.');
+  } else {
+    print('Else part will work.');
+  }
+  // output: Else part will work.
+  /// Conditional Expression
+  (a == b) ? print('If part will work.') : print('Else part will work.');
+  // output: If part will work.
+  (a != b) ? print('If part will work.') : print('Else part will work.');
+  // output: Else part will work.
 }
 
 /**
- * /// output
+ * Both null and null are NULL
+Both 10 and 20 have unequal value
+Both 5 and 5 have equal value
+Else part will work.
+If part will work.
+Else part will work.
 
-
-
-///
  */
