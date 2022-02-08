@@ -1,48 +1,36 @@
+bool isTrue() {
+  return true;
+}
+
+var testTrue = isTrue();
+
+bool isFalse() {
+  return false;
+}
+
+var testFalse = isFalse();
+
+int addTwoNumbers(int x, int y) {
+  return x + y;
+}
+
+void returnVoid() => print('Returning void');
+
 main() {
   /// everything in Dart is Object
-  /// Object is an instance of Class
+  /// even functions are objects and have a type, Function
   ///
 
-  Person? person = Person();
-  person.name = 'I am a Person Object in Dart';
-  print(person.name);
-  // I am a Person Object in Dart
-
-  Employee? emp = Employee();
-  emp.person = Person();
-  emp.person!.name = 'I am an Employee Object with name X';
-  print(emp.person!.name);
-  // I am an Employee Object with name X
-  /// Now we can place the objects in variables
-  ///
-  var placeHolder = emp;
-  placeHolder.person!.name = 'I am a variable, I can change my value.'
-      ' But I cannot change my Type.';
-  print(placeHolder.person!.name);
-  // I am a variable, I can change my value. But I cannot change my Type.
-  /// changing value
-  ///
-  placeHolder.person!.name = 'I am a variable, so I am changing my value.'
-      ' But I cannot change my Type.';
-  print(placeHolder.person!.name);
-  // I am a variable, so I am changing my value. But I cannot change my Type.
-
-  // placeHolder = person;
-  // we cannot change the Type
-}
-
-class Person {
-  late String? name;
-}
-
-class Employee {
-  late Person? person;
+  isTrue() ? print('It is $testTrue') : print('It is $testFalse');
+  isFalse() ? print('It is $testFalse') : print('It is $testTrue');
+  var result = addTwoNumbers(10, 20);
+  print(result);
+  returnVoid();
 }
 
 /**
-I am a Person Object in Dart
-I am an Employee Object with name X
-I am a variable, I can change my value. But I cannot change my Type.
-I am a variable, so I am changing my value. But I cannot change my Type.
-
+ It is true
+It is true
+30
+  Returning void
  */
