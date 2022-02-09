@@ -41,6 +41,9 @@ main() {
   }
 
   print(sayHello(message: 'Hello', name: ' John'));
+
+  /// A function can have any number of required positional parameters. These can be followed either by named parameters or
+  /// by optional positional parameters (but not both).
 }
 /**
 // output
