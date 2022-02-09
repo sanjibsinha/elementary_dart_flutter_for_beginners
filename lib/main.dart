@@ -14,6 +14,9 @@ int addTwoNumbers(int x, int y) {
   return x + y;
 }
 
+int addTwoNumbers(int x, int y) => x + y;
+print(addTwoNumbers(10, 20)); // 30
+
 void returnVoid() => print('Returning void');
 
 main() {
