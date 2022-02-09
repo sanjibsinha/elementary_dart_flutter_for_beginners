@@ -1,47 +1,39 @@
+import 'package:flutter/cupertino.dart';
+
 main() {
   /// everything in Dart is Object
   /// even functions are objects and have a type, Function
   ///
-bool isTrue() {
-  return true;
-}
+  String greet(String name, String message) {
+    return '$name tells you $message';
+  }
 
-var testTrue = isTrue();
+  print(greet('Json', 'How is everything?'));
 
-bool isFalse() {
-  return false;
-}
+  /// optional positional parameters
+  ///
+  int multiply(int x, int y, [int? z = 1]) => x * y * z!;
+  print(multiply(10, 20));
+  print(multiply(10, 2, 10));
 
-var testFalse = isFalse();
+  /// named parameters are optional unless they are required
+  ///
+  String sayHello({
+    required String message,
+    String? name,
+  }) {
+    return message + name!;
+  }
 
-int addNumbers(int x, int y) {
-  return x + y;
-}
-print(addNumbers(50, 60));
-
-int addTwoNumbers(int x, int y) => x + y;
-print(addTwoNumbers(10, 20)); // 30
-
-void returnVoid() => print('Returning void');
-
-isTrue() ? print('It is $testTrue') : print('It is $testFalse');
-isFalse() ? print('It is $testFalse') : print('It is $testTrue');
-var result = addTwoNumbers(10, 20);
-print(result);
-returnVoid();
-void getName(String name) => print(name);
-getName('John'); // John
-  
+  print(sayHello(message: 'Hello', name: ' John'));
 }
 /**
 // output
 
-110
-30
-It is true
-It is true
-30
-Returning void
-John
+Json tells you How is everything?
+200
+200
+Hello John
+
 
 */
