@@ -16,6 +16,21 @@ main() {
   print(multiply(10, 20));
   print(multiply(10, 2, 10));
 
+  int multiplyThreeWithOptionalPositionalParameters(
+    int x,
+    int y, [
+    int? z,
+  ]) {
+    var result = x * y;
+    if (z != null) {
+      result = x * y * z;
+    }
+    return result;
+  }
+
+  print(multiplyThreeWithOptionalPositionalParameters(10, 20));
+  print(multiplyThreeWithOptionalPositionalParameters(10, 20, 5));
+
   /// named parameters are optional unless they are required
   ///
   String sayHello({
@@ -33,6 +48,7 @@ main() {
 Json tells you How is everything?
 200
 200
+1000
 Hello John
 
 
