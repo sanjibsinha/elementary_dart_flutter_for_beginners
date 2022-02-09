@@ -31,3 +31,14 @@ print(result);
 returnVoid();
   
 }
+/**
+// output
+
+110
+30
+It is true
+It is true
+30
+Returning void
+
+*/
