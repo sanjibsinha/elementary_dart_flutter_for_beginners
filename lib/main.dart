@@ -29,6 +29,8 @@ isFalse() ? print('It is $testFalse') : print('It is $testTrue');
 var result = addTwoNumbers(10, 20);
 print(result);
 returnVoid();
+void getName(String name) => print(name);
+getName('John'); // John
   
 }
 /**
@@ -40,5 +42,6 @@ It is true
 It is true
 30
 Returning void
+John
 
 */
