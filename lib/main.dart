@@ -1,59 +1,20 @@
-import 'package:flutter/cupertino.dart';
-
 main() {
   /// everything in Dart is Object
   /// even functions are objects and have a type, Function
   ///
-  String greet(String name, String message) {
-    return '$name tells you $message';
-  }
-
-  print(greet('Json', 'How is everything?'));
-
-  /// optional positional parameters
+  /// All functions return a value. If no return value is
+  /// specified, the statement return null
   ///
-  int multiply(int x, int y, [int? z = 1]) => x * y * z!;
-  print(multiply(10, 20));
-  print(multiply(10, 2, 10));
+  catchYou() {}
 
-  int multiplyThreeWithOptionalPositionalParameters(
-    int x,
-    int y, [
-    int? z,
-  ]) {
-    var result = x * y;
-    if (z != null) {
-      result = x * y * z;
-    }
-    return result;
+  if (catchYou() == null) {
+    print('It returns null.');
   }
-
-  print(multiplyThreeWithOptionalPositionalParameters(10, 20));
-  print(multiplyThreeWithOptionalPositionalParameters(10, 20, 5));
-
-  /// named parameters are optional unless they are required
-  ///
-  String sayHello({
-    required String message,
-    String? name,
-  }) {
-    return message + name!;
-  }
-
-  print(sayHello(message: 'Hello', name: ' John'));
-
-  /// A function can have any number of required positional parameters. These can be followed either by named parameters or
-  /// by optional positional parameters (but not both).
 }
 /**
 // output
 
-Json tells you How is everything?
-200
-200
-200
-1000
-Hello John
+
 
 
 */
