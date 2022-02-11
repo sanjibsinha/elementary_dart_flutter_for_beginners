@@ -1,11 +1,74 @@
-void aTopLevelFunction() {} // A top-level function
-
 class AClass {
-  static void aStaticMethod() {} // A static method
-  void anInstanceMethod() {} // An instance method
+  String? iAmInstanceVariable = 'I am initialized';
+  String? anotherInstanceVariable;
+  void callMeMethod() {
+    print('Call me method.');
+  }
+}
+
+class AClassWithMethodThatPassesInstanceVariable {
+  String iAmInstanceVariable = 'I am initialized';
+  String? anotherInstanceVariable;
+  void sendMessage(String to, String from) {
+    iAmInstanceVariable = to;
+    anotherInstanceVariable = from;
+  }
+}
+
+class AClassWithConstructor {
+  String iAmInstanceVariable = 'I am initialized';
+  AClassWithConstructor(this.iAmInstanceVariable);
+}
+
+class AClassWithNamedconstructor {
+  String iAmInstanceVariable = 'I am initialized';
+  String? anotherInstanceVariable;
+  AClassWithNamedconstructor(this.iAmInstanceVariable);
+  AClassWithNamedconstructor.aNamedConstructor({
+    required this.iAmInstanceVariable,
+    this.anotherInstanceVariable,
+  });
 }
 
 main() {
+  /// Every object is an instance of a class
+  ///
+
+  var anObject = AClass();
+  var anotherObject = AClassWithMethodThatPassesInstanceVariable();
+  var aConstructorObject = AClassWithConstructor('Pass a value');
+  var aNamedConstructorObject = AClassWithNamedconstructor.aNamedConstructor(
+      iAmInstanceVariable: 'I am a required parameter');
+
+  /// Objects have members consisting of functions and data
+  /// we will call them methods and instance variables, respectively
+  ///
+  anObject.iAmInstanceVariable =
+      'Although I was initialized, I am changing value.';
+
+  /// we can assign any object to a variable for later use
+  ///
+  var anInstanceVariable = anObject;
+
+  /// now this variable can access any Object members
+  ///
+  anInstanceVariable.anotherInstanceVariable = 'I am no longer NULL';
+  anInstanceVariable.callMeMethod();
+
+  ///
+  ///
+  anotherObject.sendMessage('John', 'Json');
+  print('${anotherObject.iAmInstanceVariable} sends '
+      'message to ${anotherObject.anotherInstanceVariable}');
+
+  ///
+  ///
+  print(aConstructorObject.iAmInstanceVariable);
+
+  ///
+  ///
+  print(aNamedConstructorObject.iAmInstanceVariable);
+
   /// Every app must have a top-level main() function,
   /// which serves as the entrypoint to the app.
   /// The main() function returns void
@@ -18,59 +81,13 @@ main() {
   /// All functions return a value. If no return value is
   /// specified, the statement return null
   ///
-  catchYou() {}
-
-  if (catchYou() == null) {
-    print('It returns null.');
-  }
-
-  /// we can declare any function inside any top-level function
-
-  Function anyFunctionInsideTopLevelFunction;
-
-  // Comparing top-level functions.
-  anyFunctionInsideTopLevelFunction = aTopLevelFunction;
-  if (aTopLevelFunction == anyFunctionInsideTopLevelFunction) {
-    print('A top level function is same as any function '
-        ' inside a top-level function.');
-  }
-
-  // Comparing static methods.
-  anyFunctionInsideTopLevelFunction = AClass.aStaticMethod;
-  if (AClass.aStaticMethod == anyFunctionInsideTopLevelFunction) {
-    print('Any function inside a top level function '
-        ' is as same as a static method.');
-  }
-
-  // Comparing instance methods.
-  var firstInstanceOfAClass = AClass(); // first Instance of AClass
-  var secondInstanceOfAClass = AClass(); // second Instance of AClass
-  var aVariable = secondInstanceOfAClass;
-  anyFunctionInsideTopLevelFunction = secondInstanceOfAClass.anInstanceMethod;
-
-  // These closures refer to the second instance,
-  // so they're equal.
-  if (aVariable.anInstanceMethod == anyFunctionInsideTopLevelFunction) {
-    print('These closures refer to the second instance,'
-        ' so they\'re equal.');
-  }
-
-  // These closures refer to different instances,
-  // so they're unequal.
-  if (firstInstanceOfAClass.anInstanceMethod !=
-      secondInstanceOfAClass.anInstanceMethod) {
-    print('These closures refer to different instances,'
-        ' so they\'re unequal.');
-  }
 }
 /**
 // output
 
-It returns null.
-A top level function is same as any function  inside a top-level function.
-Any function inside a top level function  is as same as a static method.
-These closures refer to the second instance, so they're equal.
-These closures refer to different instances, so they're unequal.
-
+Call me method.
+John sends message to Json
+Pass a value
+I am a required parameter
 
 */
