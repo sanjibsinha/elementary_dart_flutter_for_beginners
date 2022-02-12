@@ -5,18 +5,18 @@ class Text {
 }
 
 class TextStyle {
-  double? size;
-  TextStyle({this.size});
+  double? fontSize;
+  TextStyle({this.fontSize});
 }
 
 main() {
-  TextStyle size = TextStyle(size: 30.0);
+  TextStyle size = TextStyle(fontSize: 30.0);
   Text iAmTextWithStyle = Text(
     text: 'I am Text',
     style: size,
   );
 
-  print('${iAmTextWithStyle.text} with size ${size.size}');
+  print('${iAmTextWithStyle.text} with size ${size.fontSize}');
 }
 /**
 // output
