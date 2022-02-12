@@ -1,7 +1,7 @@
 class Text {
   String? text;
   TextStyle? style;
-  Text({required this.text, this.style});
+  Text(this.text, {this.style});
 }
 
 class TextStyle {
@@ -12,7 +12,7 @@ class TextStyle {
 main() {
   TextStyle size = TextStyle(fontSize: 30.0);
   Text iAmTextWithStyle = Text(
-    text: 'I am Text',
+    'I am Text',
     style: size,
   );
 
