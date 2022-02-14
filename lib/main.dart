@@ -40,7 +40,7 @@ main() {
   Text textInstance = Text('I am Text');
   textInstance.state = 'I am representative of State';
   textInstance.context = Context(context: 'I am Context for Text');
-  textInstance.context!.context = 'I am Context';
+  //textInstance.context!.context = 'I am Context';
   print(conextInstance.context);
   print(stateInstance.state);
   print(textInstance.text);
@@ -53,6 +53,15 @@ main() {
 }
 /**
 // output
+
+I am Context passed as a named parameter.
+I am Stateless
+I am Text
+I am Context passed as a named parameter. and I am Stateless
+I am Text and I am representative of State and I am Context for Text
+I am building the Context Type
+I am building the Context Type
+I am refering to the superclass
 
 I am Context passed as a named parameter.
 I am Stateless
