@@ -16,12 +16,20 @@ class StateLess {
 class Text extends StateLess {
   String? text;
   Text(this.text);
-
+  
+  void build(Context context) {
+    super.build(context);
+    print('I am refering to the superclass');
+  }
+/**
   @override
   void build(Context context) {
     print('I am overriding the build method with ${text.runtimeType} Type');
   }
+  */
 }
+
+
 
 main() {
   Context conextInstance = Context(context: 'I am Context passed as a named parameter.');
@@ -45,13 +53,24 @@ main() {
 }
 /**
 // output
+
 I am Context passed as a named parameter.
 I am Stateless
 I am Text
-I am Context and I am Stateless
+I am Context passed as a named parameter. and I am Stateless
+I am Text and I am representative of State and I am Context
+I am building the Context Type
+I am building the Context Type
+I am refering to the superclass
+
+I am Context passed as a named parameter.
+I am Stateless
+I am Text
+I am Context passed as a named parameter. and I am Stateless
 I am Text and I am representative of State and I am Context
 I am building the Context Type
 I am overriding the build method with String Type
+
 
 
 */
