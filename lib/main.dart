@@ -45,7 +45,7 @@ main() {
 }
 /**
 // output
-I am Context
+I am Context passed as a named parameter.
 I am Stateless
 I am Text
 I am Context and I am Stateless
