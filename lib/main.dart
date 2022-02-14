@@ -24,7 +24,7 @@ class Text extends StateLess {
 }
 
 main() {
-  Context conextInstance = Context(context: 'I am Context');
+  Context conextInstance = Context(context: 'I am Context passed as a named parameter.');
   StateLess stateInstance = StateLess(
     state: 'I am Stateless',
     context: conextInstance,
