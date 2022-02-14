@@ -1,28 +1,57 @@
-class Text {
-  String? text;
-  TextStyle? style;
-  Text(this.text, {this.style});
+class Context {
+  String? context;
+  Context({this.context});
 }
 
-class TextStyle {
-  double? fontSize;
-  TextStyle({this.fontSize});
+class StateLess {
+  String? state;
+  Context? context;
+  StateLess({this.state, this.context});
+  void build(Context context) {
+    context = context;
+    print('I am building the ${context.runtimeType} Type');
+  }
+}
+
+class Text extends StateLess {
+  String? text;
+  Text(this.text);
+
+  @override
+  void build(Context context) {
+    print('I am overriding the build method with ${text.runtimeType} Type');
+  }
 }
 
 main() {
-  TextStyle size = TextStyle(fontSize: 30.0);
-  Text iAmTextWithStyle = Text(
-    'I am Text',
-    style: size,
+  Context conextInstance = Context(context: 'I am Context');
+  StateLess stateInstance = StateLess(
+    state: 'I am Stateless',
+    context: conextInstance,
   );
+  Text textInstance = Text('I am Text');
+  textInstance.state = 'I am representative of State';
+  textInstance.context = Context(context: 'I am Context for Text');
+  textInstance.context!.context = 'I am Context';
+  print(conextInstance.context);
+  print(stateInstance.state);
+  print(textInstance.text);
 
-  print('${iAmTextWithStyle.text} with size ${size.fontSize}');
-  print('The Type of the Text Object is: ${iAmTextWithStyle.runtimeType}');
+  print('${stateInstance.context!.context} and ${stateInstance.state}');
+  print('${textInstance.text} and ${textInstance.state} '
+      'and ${textInstance.context!.context}');
+  stateInstance.build(conextInstance);
+  textInstance.build(conextInstance);
 }
 /**
 // output
+I am Context
+I am Stateless
+I am Text
+I am Context and I am Stateless
+I am Text and I am representative of State and I am Context
+I am building the Context Type
+I am overriding the build method with String Type
 
-I am Text with size 30
-The Type of the Text Object is: Text
 
 */
