@@ -1,35 +1,41 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(const App());
+  runApp(const App(
+    title: 'Initialising Instance variable',
+  ));
 }
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({Key? key, required this.title}) : super(key: key);
 
-  static const _title = 'Class Variables and Methods';
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: AppHomePage(),
+    return MaterialApp(
+      title: title,
+      home: AppHomePage(
+        title: title,
+      ),
     );
   }
 }
 
 class AppHomePage extends StatelessWidget {
-  const AppHomePage({Key? key}) : super(key: key);
+  const AppHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(App._title),
+        title: Text(title),
       ),
       body: Center(
         child: Text(
-          App._title,
+          title,
           style: Theme.of(context).textTheme.headline4,
         ),
       ),
