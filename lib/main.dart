@@ -102,3 +102,34 @@ I have changed Context Title
 
 
 */
+
+/**
+
+class Context {
+  static const _title = 'I am a Context Class variable';
+  final String _context;
+  Context(this._context);
+}
+
+
+
+main() {
+  /// We do not have to instantiate Context
+  /// Because _title is the Context class variable
+  print(Context._title);
+  Context context = Context('I am a Context instance variable initilized through Constructor');
+  print(context._context);
+  
+ 
+ 
+}
+/**
+// output
+
+I am a Context Class variable
+I am a Context instance variable initilized through Constructor
+
+*/
+
+
+*/
