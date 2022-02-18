@@ -7,7 +7,7 @@ main() {
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
-  static const title = 'How to be Rich?';
+  static const title = 'How to be Peaceful?';
 
   @override
   Widget build(BuildContext context) {
@@ -30,27 +30,30 @@ class AppHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.orange[900],
+        backgroundColor: Colors.pink[900],
       ),
-      backgroundColor: Colors.orange[300],
-      body:  Center(
-        child: Column(
-          children: [
-            Text(
-              'Simple',
-              style: Theme.of(context).textTheme.headline3,
-            ),
-            const Image(
-              image: AssetImage('images/dollar.jpg'),
+      backgroundColor: Colors.pink[300],
+      body: Center(
+          child: Column(
+        children: [
+          Text(
+            'Simple',
+            style: Theme.of(context).textTheme.headline3,
+          ),
+          Container(
+            margin: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
+            child: const Image(
+              image: AssetImage('images/fig3.5.jpg'),
               fit: BoxFit.cover,
             ),
-            Text(
-              'Do Your Job consistently. Money will come.',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-          ],
-        )
-      ),
+          ),
+          Text(
+            'Why are you fighting? Ask yourself first.',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+        ],
+      )),
     );
   }
 }
