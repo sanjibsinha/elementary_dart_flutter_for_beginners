@@ -36,7 +36,12 @@ class AppHomePage extends StatelessWidget {
         backgroundColor: Colors.amber[900],
         title: Text(title),
       ),
-      body: Container(),
+      body: Container(
+        margin: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
+        color: Colors.blue,
+        child: const Text('I am Container'),
+      ),
     );
   }
 }
