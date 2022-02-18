@@ -21,6 +21,35 @@ class App extends StatelessWidget {
 }
 
 class AppHomePage extends StatelessWidget {
+  const AppHomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.amber[200],
+      appBar: AppBar(
+        backgroundColor: Colors.amber[900],
+        title: Text(title),
+      ),
+      body: Container(),
+    );
+  }
+}
+
+/**
+ * Containers with no children try to be as big as possible unless 
+ * the incoming constraints are unbounded, in which case they try 
+ * to be as small as possible. 
+ * Containers with children size themselves to their children. 
+ */
+
+/**
+ * class AppHomePage extends StatelessWidget {
   const AppHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
@@ -57,3 +86,5 @@ class AppHomePage extends StatelessWidget {
     );
   }
 }
+
+ */
