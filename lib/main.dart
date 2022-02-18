@@ -40,7 +40,13 @@ class AppHomePage extends StatelessWidget {
         margin: const EdgeInsets.all(20.0),
         padding: const EdgeInsets.all(10.0),
         color: Colors.blue,
-        child: const Text('I am Container'),
+        child: const Text(
+          'I am Container',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 50.0,
+          ),
+        ),
       ),
     );
   }
