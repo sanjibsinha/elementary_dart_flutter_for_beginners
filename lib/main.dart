@@ -36,24 +36,85 @@ class AppHomePage extends StatelessWidget {
       body: Center(
           child: Column(
         children: [
-          Text(
-            'Simple',
-            style: Theme.of(context).textTheme.headline3,
-          ),
-          Container(
-            margin: const EdgeInsets.all(8.0),
-            padding: const EdgeInsets.all(8.0),
-            child: const Image(
-              image: AssetImage('images/fig3.5.jpg'),
-              fit: BoxFit.cover,
+          const SizedBox(
+            height: 6.0,
+            width: 60.0,
+            child: Divider(
+              thickness: 6.0,
             ),
           ),
-          Text(
-            'Why are you fighting? Ask yourself first.',
-            style: Theme.of(context).textTheme.headline6,
+          const Image(
+            image: AssetImage('images/fig3.5.jpg'),
+          ),
+          SizedBox(
+            height: 6.0,
+            width: 60.0,
+            child: Divider(
+              color: Colors.orange.shade300,
+              thickness: 2.0,
+            ),
+          ),
+          Card(
+            margin: const EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 5.0),
+            color: Colors.orange.shade100,
+            child: const ListTile(
+              title: Text('Ask yourself why you are fighting for?'),
+              trailing: Icon(Icons.question_answer_outlined),
+            ),
+          ),
+          SizedBox(
+            height: 6.0,
+            width: 60.0,
+            child: Divider(
+              color: Colors.orange.shade300,
+              thickness: 2.0,
+            ),
+          ),
+          Card(
+            margin: const EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 5.0),
+            color: Colors.orange.shade100,
+            child: const ListTile(
+              title: Text('The reason? In most cases, Trivial.'),
+              trailing: Icon(Icons.sms_failed),
+            ),
+          ),
+          SizedBox(
+            height: 6.0,
+            width: 60.0,
+            child: Divider(
+              color: Colors.orange.shade300,
+              thickness: 2.0,
+            ),
+          ),
+          Card(
+            margin: const EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 5.0),
+            color: Colors.orange.shade100,
+            child: const ListTile(
+              title: Text('Remember, Dialogue is the Key.'),
+              trailing: Icon(Icons.mobile_friendly),
+            ),
+          ),
+          SizedBox(
+            height: 6.0,
+            width: 60.0,
+            child: Divider(
+              color: Colors.orange.shade300,
+              thickness: 2.0,
+            ),
           ),
         ],
       )),
     );
   }
 }
+/**
+ Container(
+            width: 350.0,
+            height: 350.0,
+            //margin: const EdgeInsets.all(8.0),
+            //padding: const EdgeInsets.all(8.0),
+            child: const Image(
+              image: AssetImage('images/fig3.5.jpg'),
+            ),
+          ),
+ */
