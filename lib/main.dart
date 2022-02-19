@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 main() {
   runApp(const App());
@@ -7,7 +8,7 @@ main() {
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
-  static const title = 'How to be Peaceful?';
+  static const title = 'The Lion King Business Card';
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +32,69 @@ class AppHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[200],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.amber[900],
         title: Text(title),
       ),
-      body: Container(
-        margin: const EdgeInsets.all(20.0),
-        padding: const EdgeInsets.all(10.0),
-        color: Colors.blue,
-        child: const Text(
-          'I am Container',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 50.0,
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const CircleAvatar(
+              backgroundImage: AssetImage(
+                'images/lion-king.jpg',
+              ),
+              radius: 75.0,
+            ),
+            Container(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                'Lion King',
+                style: GoogleFonts.laila(
+                  textStyle: Theme.of(context).textTheme.headline6,
+                  fontSize: 50,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.orange.shade900,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                'Flutter Developer',
+                style: GoogleFonts.lato(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.orange.shade500,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 16.0,
+              width: 60.0,
+              child: Divider(
+                color: Colors.orange.shade300,
+                thickness: 2.0,
+              ),
+            ),
+            Card(
+              margin: const EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 5.0),
+              color: Colors.orange.shade100,
+              child: const ListTile(
+                title: Text('100 123 456'),
+                trailing: Icon(Icons.phone_android),
+              ),
+            ),
+            Card(
+              margin: const EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 5.0),
+              color: Colors.orange.shade100,
+              child: const ListTile(
+                title: Text('to@iamlion.com'),
+                trailing: Icon(Icons.email_outlined),
+              ),
+            ),
+          ],
         ),
       ),
     );
