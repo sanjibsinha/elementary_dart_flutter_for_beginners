@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import '../controller/question_widget.dart';
@@ -47,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             QuestionWidget(questions: questions, counter: _counter),
             ...(questions[_counter]['answers'] as List<String>)
                 .map(
-                  (answer) => buildElevatedButton(answer),
+                  (answer) => buildButtonInsideContainer(answer),
                 )
                 .toList(),
             SizedBox(
@@ -71,25 +73,17 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  ElevatedButton buildElevatedButton(String answer) {
-    return ElevatedButton(
-      onPressed: _incrementCounter,
-      child: Container(
-        //padding: const EdgeInsets.all(4.0),
-        color: Colors.white,
+  Container buildButtonInsideContainer(String answer) {
+    return Container(
+      padding: const EdgeInsets.all(10.0),
+      child: ElevatedButton(
+        onPressed: _incrementCounter,
         child: Text(
           answer,
           style: const TextStyle(
             fontSize: 30.0,
-            color: Colors.redAccent,
+            fontWeight: FontWeight.bold,
           ),
-        ),
-      ),
-      style: ElevatedButton.styleFrom(
-        primary: Colors.white,
-        textStyle: const TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
         ),
       ),
     );
