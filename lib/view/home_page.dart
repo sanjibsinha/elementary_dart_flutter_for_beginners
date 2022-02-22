@@ -50,6 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   (answer) => buildElevatedButton(answer),
                 )
                 .toList(),
+            SizedBox(
+              height: 16.0,
+              width: 60.0,
+              child: Divider(
+                color: Colors.orange.shade300,
+                thickness: 2.0,
+              ),
+            ),
             Text(
               _correctAnswer,
               style: const TextStyle(
@@ -66,10 +74,22 @@ class _MyHomePageState extends State<MyHomePage> {
   ElevatedButton buildElevatedButton(String answer) {
     return ElevatedButton(
       onPressed: _incrementCounter,
-      child: Text(
-        answer,
-        style: const TextStyle(
-          fontSize: 30.0,
+      child: Container(
+        //padding: const EdgeInsets.all(4.0),
+        color: Colors.white,
+        child: Text(
+          answer,
+          style: const TextStyle(
+            fontSize: 30.0,
+            color: Colors.redAccent,
+          ),
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+        primary: Colors.white,
+        textStyle: const TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
