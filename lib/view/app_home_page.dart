@@ -52,3 +52,26 @@ class AppHomePage extends StatelessWidget {
     );
   }
 }
+
+/**
+
+void main() {
+  // named function
+  void pressThreeDBuddy() {
+    print('Pressing a 3D Buddy.');
+  }
+  // calling a function
+  pressThreeDBuddy();
+  // output: Pressing a 3D Buddy.
+  
+  // anonymous function
+  Function anonymous;
+  anonymous = () {
+    print('Pressing anonymously.');
+  };
+  // calling an anonymous function
+  anonymous();
+  // output: Pressing anonymously.
+}
+
+*/
