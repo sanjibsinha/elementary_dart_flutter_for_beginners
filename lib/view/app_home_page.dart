@@ -5,9 +5,10 @@ class AppHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String greedy = 'Greedy';
-    String confident = 'Confident';
-    String careLess = 'Careless';
+    /* String greedy = 'greedy';
+    String confident = 'confident';
+    String careLess = 'careless'; */
+    List name = ['greedy', 'confident', 'careless'];
     return Scaffold(
       backgroundColor: Colors.white70,
       appBar: AppBar(
@@ -23,7 +24,7 @@ class AppHomePage extends StatelessWidget {
                   onTap: () {
                     print('I am Greedy 3D Buddy.');
                   },
-                  child: Image.asset('images/$greedy.jpg'),
+                  child: Image.asset('images/${name[0]}.jpg'),
                 ),
               ),
             ),
@@ -34,7 +35,7 @@ class AppHomePage extends StatelessWidget {
                   onTap: () {
                     print('I am Confident 3D Buddy');
                   },
-                  child: Image.asset('images/$confident.jpg'),
+                  child: Image.asset('images/${name[1]}.jpg'),
                 ),
               ),
             ),
@@ -45,7 +46,7 @@ class AppHomePage extends StatelessWidget {
                   onTap: () {
                     print('I am Careless 3D Buddy.');
                   },
-                  child: Image.asset('images/$careLess.jpg'),
+                  child: Image.asset('images/${name[2]}.jpg'),
                 ),
               ),
             ),
