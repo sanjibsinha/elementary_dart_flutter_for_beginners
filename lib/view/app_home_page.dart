@@ -57,25 +57,29 @@ class AppHomePage extends StatelessWidget {
   }
 }
 
-/**
-
 void main() {
-  // named function
-  void pressThreeDBuddy() {
-    print('Pressing a 3D Buddy.');
-  }
-  // calling a function
-  pressThreeDBuddy();
-  // output: Pressing a 3D Buddy.
+  // Dart is statically typed language
+  var name = 'Sanjib';
+  print('Name is $name');
   
-  // anonymous function
-  Function anonymous;
-  anonymous = () {
-    print('Pressing anonymously.');
-  };
-  // calling an anonymous function
-  anonymous();
-  // output: Pressing anonymously.
+  // we cannot assign any other type to the variable name
+  // name = 1; 
+  // A value of type 'int' can't be assigned to a variable of type 'String'.
+  
+  // now it makes dynamically typed which is not recommended
+  var age; 
+  // Prefer typing uninitialized variables and fields.
+  age = 100;
+  print('Age is: $age'); 
+  
+  age = 'Age';
+  print('Age is: $age');
+  
+  /**
+   Name is Sanjib
+Age is: 100
+Age is: Age
+   * 
+   * */
+  
 }
-
-*/
