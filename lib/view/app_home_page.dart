@@ -5,9 +5,6 @@ class AppHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /* String greedy = 'greedy';
-    String confident = 'confident';
-    String careLess = 'careless'; */
     List name = ['greedy', 'confident', 'careless'];
     return Scaffold(
       backgroundColor: Colors.white70,
@@ -61,25 +58,24 @@ void main() {
   // Dart is statically typed language
   var name = 'Sanjib';
   print('Name is $name');
-  
+
   // we cannot assign any other type to the variable name
-  // name = 1; 
+  // name = 1;
   // A value of type 'int' can't be assigned to a variable of type 'String'.
-  
+
   // now it makes dynamically typed which is not recommended
-  var age; 
+  var age;
   // Prefer typing uninitialized variables and fields.
   age = 100;
-  print('Age is: $age'); 
-  
+  print('Age is: $age');
+
   age = 'Age';
   print('Age is: $age');
-  
+
   /**
    Name is Sanjib
 Age is: 100
 Age is: Age
    * 
    * */
-  
 }
