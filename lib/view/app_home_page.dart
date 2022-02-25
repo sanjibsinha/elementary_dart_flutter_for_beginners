@@ -16,7 +16,7 @@ class _AppHomePageState extends State<AppHomePage> {
     return Scaffold(
       backgroundColor: Colors.white70,
       appBar: AppBar(
-        title: const Text('Anonymous Function Example'),
+        title: const Text('Stateful Photo App'),
       ),
       body: Center(
         child: Row(
