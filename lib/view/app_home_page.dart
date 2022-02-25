@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class AppHomePage extends StatelessWidget {
+class AppHomePage extends StatefulWidget {
   const AppHomePage({Key? key}) : super(key: key);
 
   @override
+  State<AppHomePage> createState() => _AppHomePageState();
+}
+
+class _AppHomePageState extends State<AppHomePage> {
+  List name = ['greedy', 'confident', 'careless'];
+  int index = 0;
+
+  @override
   Widget build(BuildContext context) {
-    List name = ['greedy', 'confident', 'careless'];
     return Scaffold(
       backgroundColor: Colors.white70,
       appBar: AppBar(
@@ -19,9 +26,14 @@ class AppHomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    print('I am Greedy 3D Buddy.');
+                    setState(() {
+                      index++;
+                      if (index == 3) {
+                        index = 0;
+                      }
+                    });
                   },
-                  child: Image.asset('images/${name[0]}.jpg'),
+                  child: Image.asset('images/${name[index]}.jpg'),
                 ),
               ),
             ),
@@ -30,9 +42,14 @@ class AppHomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    print('I am Confident 3D Buddy');
+                    setState(() {
+                      index++;
+                      if (index == 3) {
+                        index = 0;
+                      }
+                    });
                   },
-                  child: Image.asset('images/${name[1]}.jpg'),
+                  child: Image.asset('images/${name[index]}.jpg'),
                 ),
               ),
             ),
@@ -41,9 +58,14 @@ class AppHomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    print('I am Careless 3D Buddy.');
+                    setState(() {
+                      index++;
+                      if (index == 3) {
+                        index = 0;
+                      }
+                    });
                   },
-                  child: Image.asset('images/${name[2]}.jpg'),
+                  child: Image.asset('images/${name[index]}.jpg'),
                 ),
               ),
             ),
