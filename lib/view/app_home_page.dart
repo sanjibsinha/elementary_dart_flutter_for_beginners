@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AppHomePage extends StatefulWidget {
@@ -8,15 +9,16 @@ class AppHomePage extends StatefulWidget {
 }
 
 class _AppHomePageState extends State<AppHomePage> {
-  List name = ['greedy', 'confident', 'careless'];
-  int index = 0;
+  int leftFace = 0;
+
+  Random random = Random();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white70,
       appBar: AppBar(
-        title: const Text('Stateful Photo App'),
+        title: const Text('Mood Swing App'),
       ),
       body: Center(
         child: Row(
@@ -27,13 +29,10 @@ class _AppHomePageState extends State<AppHomePage> {
                 child: GestureDetector(
                   onTap: () {
                     setState(() {
-                      index++;
-                      if (index == 3) {
-                        index = 0;
-                      }
+                      leftFace = random.nextInt(4);
                     });
                   },
-                  child: Image.asset('images/${name[index]}.jpg'),
+                  child: Image.asset('images/face${leftFace + 1}.jpg'),
                 ),
               ),
             ),
@@ -42,14 +41,9 @@ class _AppHomePageState extends State<AppHomePage> {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    setState(() {
-                      index++;
-                      if (index == 3) {
-                        index = 0;
-                      }
-                    });
+                    setState(() {});
                   },
-                  child: Image.asset('images/${name[index]}.jpg'),
+                  child: Image.asset('images/face2.jpg'),
                 ),
               ),
             ),
@@ -58,14 +52,9 @@ class _AppHomePageState extends State<AppHomePage> {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    setState(() {
-                      index++;
-                      if (index == 3) {
-                        index = 0;
-                      }
-                    });
+                    setState(() {});
                   },
-                  child: Image.asset('images/${name[index]}.jpg'),
+                  child: Image.asset('images/face3.jpg'),
                 ),
               ),
             ),
