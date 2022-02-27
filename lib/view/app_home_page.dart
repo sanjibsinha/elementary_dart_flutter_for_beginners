@@ -9,9 +9,14 @@ class AppHomePage extends StatefulWidget {
 }
 
 class _AppHomePageState extends State<AppHomePage> {
-  int leftFace = 0;
-
-  Random random = Random();
+  int leftFaceIndex = 1;
+  int rightFaceIndex = 1;
+  void changeMood() {
+    setState(() {
+      leftFaceIndex = Random().nextInt(4);
+      rightFaceIndex = Random().nextInt(4);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +33,9 @@ class _AppHomePageState extends State<AppHomePage> {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    setState(() {
-                      leftFace = random.nextInt(4);
-                    });
+                    changeMood();
                   },
-                  child: Image.asset('images/face${leftFace + 1}.jpg'),
+                  child: Image.asset('images/face${leftFaceIndex + 1}.jpg'),
                 ),
               ),
             ),
@@ -41,20 +44,9 @@ class _AppHomePageState extends State<AppHomePage> {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    setState(() {});
+                    changeMood();
                   },
-                  child: Image.asset('images/face2.jpg'),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {});
-                  },
-                  child: Image.asset('images/face3.jpg'),
+                  child: Image.asset('images/face${rightFaceIndex + 1}.jpg'),
                 ),
               ),
             ),
@@ -63,30 +55,4 @@ class _AppHomePageState extends State<AppHomePage> {
       ),
     );
   }
-}
-
-void main() {
-  // Dart is statically typed language
-  var name = 'Sanjib';
-  print('Name is $name');
-
-  // we cannot assign any other type to the variable name
-  // name = 1;
-  // A value of type 'int' can't be assigned to a variable of type 'String'.
-
-  // now it makes dynamically typed which is not recommended
-  var age;
-  // Prefer typing uninitialized variables and fields.
-  age = 100;
-  print('Age is: $age');
-
-  age = 'Age';
-  print('Age is: $age');
-
-  /**
-   Name is Sanjib
-Age is: 100
-Age is: Age
-   * 
-   * */
 }
