@@ -1,25 +1,14 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class AppHomePage extends StatefulWidget {
+import '../model/mood.dart';
+
+class AppHomePage extends StatelessWidget {
   const AppHomePage({Key? key}) : super(key: key);
 
   @override
-  State<AppHomePage> createState() => _AppHomePageState();
-}
-
-class _AppHomePageState extends State<AppHomePage> {
-  int leftFaceIndex = 1;
-  int rightFaceIndex = 1;
-  void changeMood() {
-    setState(() {
-      leftFaceIndex = Random().nextInt(4);
-      rightFaceIndex = Random().nextInt(4);
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final mood = Provider.of<Mood>(context);
     return Scaffold(
       backgroundColor: Colors.white70,
       appBar: AppBar(
@@ -33,9 +22,10 @@ class _AppHomePageState extends State<AppHomePage> {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    changeMood();
+                    mood.changeMood();
                   },
-                  child: Image.asset('images/face${leftFaceIndex + 1}.jpg'),
+                  child:
+                      Image.asset('images/face${mood.leftFaceIndex + 1}.jpg'),
                 ),
               ),
             ),
@@ -44,9 +34,10 @@ class _AppHomePageState extends State<AppHomePage> {
                 padding: const EdgeInsets.all(18.0),
                 child: GestureDetector(
                   onTap: () {
-                    changeMood();
+                    mood.changeMood();
                   },
-                  child: Image.asset('images/face${rightFaceIndex + 1}.jpg'),
+                  child:
+                      Image.asset('images/face${mood.rightFaceIndex + 1}.jpg'),
                 ),
               ),
             ),
