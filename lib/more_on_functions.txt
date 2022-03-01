@@ -12,11 +12,26 @@ void printStatement() {
   print('Printing statement.');
 }
 
-/// second type of functions that take some input and give an output
+/// second type of functions that take some inputs amd we can use that inputs 
+/// inside our functions so that we can make it more adaptable by passing 
+/// different values
+
 
 void main() {
   
- printStatement(noun: 'Boy', adjective: 'Good'); // Good Boy
+ printStatement(noun: 'Girl', adjective: 'Good'); 
+  printStatement(noun: 'Book', adjective: 'Interesting'); 
+  printStatement(noun: 'John Smith', adjective: 'Brave'); 
+  printStatement(noun: 'Athens', adjective: 'Ancient'); 
+  
+  /** 
+   
+   Good Girl
+Interesting Book
+Brave John Smith
+Ancient Athens
+   
+   */
   
 }
 
