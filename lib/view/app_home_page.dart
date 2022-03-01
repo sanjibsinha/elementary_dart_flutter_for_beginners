@@ -27,6 +27,8 @@ class AppHomePage extends StatelessWidget {
     );
   }
 
+  /// A common function that returns data type Expanded
+
   Expanded expandMethod(Mood mood, Mood color, BuildContext context) {
     return Expanded(
       child: Padding(
