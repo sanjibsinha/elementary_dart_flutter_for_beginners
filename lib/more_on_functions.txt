@@ -1,0 +1,26 @@
+/// this is the most basic of all functions
+/// where we give instructions and call the function name
+
+void main() {
+  
+ printStatement(); // Printing statement.
+  
+}
+
+
+void printStatement() {
+  print('Printing statement.');
+}
+
+/// second type of functions that take some input and give an output
+
+void main() {
+  
+ printStatement(noun: 'Boy', adjective: 'Good'); // Good Boy
+  
+}
+
+
+void printStatement({String? noun, String? adjective}) {
+  print('$adjective $noun');
+}
