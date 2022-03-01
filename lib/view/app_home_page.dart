@@ -19,63 +19,40 @@ class AppHomePage extends StatelessWidget {
       body: Center(
         child: Row(
           children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: GestureDetector(
-                  onTap: () {
-                    mood.changeMood();
-                    color.changeColor();
-                  },
-                  child: Column(
-                    children: [
-                      Image.asset('images/face${mood.leftFaceIndex + 1}.jpg'),
-                      Container(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          'Mood Changes with Color',
-                          style: GoogleFonts.laila(
-                            textStyle: Theme.of(context).textTheme.headline6,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: color.colors[color.leftIndex],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: GestureDetector(
-                  onTap: () {
-                    mood.changeMood();
-                    color.changeColor();
-                  },
-                  child: Column(
-                    children: [
-                      Image.asset('images/face${mood.rightFaceIndex + 1}.jpg'),
-                      Container(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          'Mood Changes with Color',
-                          style: GoogleFonts.laila(
-                            textStyle: Theme.of(context).textTheme.headline6,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: color.colors[color.rightIndex],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            expandMethod(mood, color, context),
+            expandMethod(mood, color, context),
           ],
+        ),
+      ),
+    );
+  }
+
+  Expanded expandMethod(Mood mood, Mood color, BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: GestureDetector(
+          onTap: () {
+            mood.changeMood();
+            color.changeColor();
+          },
+          child: Column(
+            children: [
+              Image.asset('images/face${mood.rightFaceIndex + 1}.jpg'),
+              Container(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(
+                  'Mood Changes with Color',
+                  style: GoogleFonts.laila(
+                    textStyle: Theme.of(context).textTheme.headline6,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    color: color.colors[color.rightIndex],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
