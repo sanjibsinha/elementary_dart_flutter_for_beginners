@@ -1,0 +1,41 @@
+/// this is the most basic of all functions
+/// where we give instructions and call the function name
+
+void main() {
+  
+ printStatement(); // Printing statement.
+  
+}
+
+
+void printStatement() {
+  print('Printing statement.');
+}
+
+/// second type of functions that take some inputs amd we can use that inputs 
+/// inside our functions so that we can make it more adaptable by passing 
+/// different values
+
+
+void main() {
+  
+ printStatement(noun: 'Girl', adjective: 'Good'); 
+  printStatement(noun: 'Book', adjective: 'Interesting'); 
+  printStatement(noun: 'John Smith', adjective: 'Brave'); 
+  printStatement(noun: 'Athens', adjective: 'Ancient'); 
+  
+  /** 
+   
+   Good Girl
+Interesting Book
+Brave John Smith
+Ancient Athens
+   
+   */
+  
+}
+
+
+void printStatement({String? noun, String? adjective}) {
+  print('$adjective $noun');
+}
