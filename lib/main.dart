@@ -17,54 +17,88 @@ void main() {
 }
 
 /**
+
+
 void main() {
   
-  returnNothing();
+  BWidget b = BWidget();
   
-  instruct();
+  AWidget a = AWidget(b: b);
   
+  BWidget b1 = BWidget(a: a);
+  
+  print(a.runtimeType); // AWidget
+  
+  print(a.b); // Instance of 'BWidget'
+  
+  print(a.b.runtimeType); // BWidget
+  
+  var returningBWidget = a.getBWidget(a);
+  
+  print(returningBWidget.runtimeType); // AWidget
+  
+  print(returningBWidget.b); // Instance of 'BWidget'
+  
+  print(returningBWidget.b.runtimeType); // BWidget
+  
+  var returningAWidget = a.getAWidget(b);
+  
+  print(returningAWidget.runtimeType); // BWidget
+  
+  print(returningAWidget.s); // I am BWidget
+  
+  print(b1.a); // Instance of 'AWidget'
+  
+  print(b1.s); // I am BWidget
+  
+  print(b1.a?.getAWidget(b)); // Instance of 'BWidget'
+  
+  print(b1.a?.getBWidget(a)); // Instance of 'AWidget'  
+  
+  print(b1.a?.getAWidget(b).a); // null
+  
+  print(b1.a?.getAWidget(b).a); // null
+  
+  print(b1.a?.getAWidget(b).runtimeType); // BWidget
+  
+  print(b1.a?.getBWidget(a).b); // Instance of 'BWidget'
+  
+  print(b1.a?.getBWidget(a).runtimeType); // AWidget
+  
+  print(b1.a?.getBWidget(a).getAWidget(b)); // Instance of 'BWidget'
+  
+  print(b1.a?.getBWidget(a).getBWidget(a)); // Instance of 'AWidget'
+  
+  print(b1.a?.getBWidget(a).getBWidget(a).b); // Instance of 'BWidget'
+  
+  print(b1.a?.getBWidget(a).getBWidget(a).getAWidget(b)); // Instance of 'BWidget'
   
   
 }
 
-void returnNothing() {
-  doSomething();
-}
 
-void doSomething() {
-  print('Do something');
-}
-
-void instruct() {
-  print('${add()}');
-  print('${subtract()}');
-  print('${multiply()}');
-  print('${divide()}');
-}
-
-int add() => 1 + 2;
-int subtract() => 2 - 1;
-int multiply() => 2 * 3;
-int divide() => 4 ~/ 2;
-
-/**
- * Do something
-3
-1
-6
-2
- */
-void main() {
+class AWidget {
+  BWidget? b;  
   
-print(greet(greeting: 'Hello', name: 'Json Web'));   
+  AWidget({this.b});
+  
+  AWidget getBWidget(AWidget a) {
+    return a;
+  }
+  
+  BWidget getAWidget(BWidget b) {
+    this.b = b;
+    return b;
+  }
   
 }
 
-String greet({required String greeting, required String name}) {
-  return greeting + ' ' + name;
+class BWidget {
+  String s = 'I am BWidget';
+  AWidget? a;
+  
+  BWidget({this.a});
 }
-
-
 
 */
 
