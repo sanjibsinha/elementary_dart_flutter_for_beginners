@@ -1,61 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-
-import '../model/mood.dart';
 
 class AppHomePage extends StatelessWidget {
   const AppHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final mood = Provider.of<Mood>(context);
-    final color = Provider.of<Mood>(context);
     return Scaffold(
-      backgroundColor: Colors.white70,
+      //backgroundColor: Colors.blue.shade900,
       appBar: AppBar(
         title: const Text('Mood Swing App'),
       ),
       body: Center(
-        child: Row(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            expandMethod(mood, color, context),
-            expandMethod(mood, color, context),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// A common function that returns data type Expanded
-  /// later we can use that function
-
-  Expanded expandMethod(Mood mood, Mood color, BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: GestureDetector(
-          onTap: () {
-            mood.changeMood();
-            color.changeColor();
-          },
-          child: Column(
-            children: [
-              Image.asset('images/face${mood.rightFaceIndex + 1}.jpg'),
-              Container(
-                padding: const EdgeInsets.all(5.0),
-                child: Text(
-                  'Mood Changes with Color',
-                  style: GoogleFonts.laila(
-                    textStyle: Theme.of(context).textTheme.headline6,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: color.colors[color.rightIndex],
+            TextButton(
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.hovered)) {
+                      return Colors.red.withOpacity(0.04);
+                    }
+                    if (states.contains(MaterialState.focused) ||
+                        states.contains(MaterialState.pressed)) {
+                      return Colors.red.withOpacity(0.12);
+                    }
+                    return null; // Defer to the widget's default.
+                  },
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                'True',
+                style: GoogleFonts.almendraDisplay(
+                  textStyle: const TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+            Row(
+              children: [],
+            ),
+          ],
         ),
       ),
     );
