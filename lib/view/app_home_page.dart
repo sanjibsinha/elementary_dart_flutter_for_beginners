@@ -28,6 +28,7 @@ class AppHomePage extends StatelessWidget {
   }
 
   /// A common function that returns data type Expanded
+  /// later we can use that function
 
   Expanded expandMethod(Mood mood, Mood color, BuildContext context) {
     return Expanded(
