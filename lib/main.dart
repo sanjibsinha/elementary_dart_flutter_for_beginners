@@ -68,3 +68,42 @@ String greet({required String greeting, required String name}) {
 
 
 */
+
+/**
+
+
+void main() {
+  
+  BWidget b = BWidget();
+  
+  AWidget a = AWidget(b: b);
+  
+  print(a.runtimeType); // AWidget
+  
+  print(a.b); // Instance of 'BWidget'
+  
+  print(a.b.runtimeType); // BWidget
+  
+  var returningBWidget = a.getBWidget(b);
+  
+  returningBWidget; // BWidget
+  
+}
+
+
+class AWidget {
+  BWidget? b;
+  
+  AWidget({this.b});
+  
+  void getBWidget(BWidget b) {
+    this.b = b;
+    print(b.runtimeType);
+  }
+  
+}
+
+class BWidget {}
+
+
+*/
