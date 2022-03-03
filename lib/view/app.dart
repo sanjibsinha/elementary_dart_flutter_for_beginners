@@ -8,7 +8,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Anonymous Function Example',
+      title: 'Introduction to List',
       home: AppHomePage(),
     );
   }

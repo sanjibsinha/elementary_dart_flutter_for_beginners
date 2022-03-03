@@ -1,0 +1,15 @@
+/// this is the most basic of all functions
+/// where we give instructions and call the function name
+
+void main() {
+  
+ printStatement(); // Printing statement.
+  
+}
+
+
+void printStatement() {
+  print('Printing statement.');
+}
+
+/// 

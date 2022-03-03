@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'model/mood.dart';
 import 'view/app.dart';
+
 
 void main() {
   runApp(
@@ -107,3 +106,5 @@ class BWidget {}
 
 
 */
+
+
