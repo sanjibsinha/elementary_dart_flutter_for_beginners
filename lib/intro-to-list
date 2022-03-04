@@ -1,2 +1,62 @@
 ## Intro to List in Dart and Flutter
 
+void main() {
+  
+  IntroToList question = IntroToList();
+  
+  print(question.questions.length); // 4
+  
+  print(question.questions.reversed);
+  
+  /**
+   * (The synonym of scorn is despise., 
+   * The sound a Frog makes is known as croak., 
+   * A young horse is called a duckling., 
+   * 640 acres equal 1 square mile.)* 
+   * 
+   * */
+  
+   print(question.questions.firstWhere((i) => i.length > 1)); 
+  // 640 acres equal 1 square mile.
+  question.checkAnswer(2); 
+  // Corerct Answer was: A young horse = a duckling.  
+  
+}
+
+class IntroToList {
+  
+  List<String> questions = [
+    '640 acres equal 1 square mile.',
+    'A young horse is called a duckling.',
+    'The sound a Frog makes is known as croak.',
+    'The synonym of scorn is despise.',
+  ];
+
+  int questionIndex = 0;
+
+  List<bool> answers = [
+    true,
+    false,
+    true,
+    true,
+  ];
+
+  String check = '';
+
+  void checkAnswer(int questionIndex) {
+    
+    if (questionIndex == 0) {
+      check = '';
+    } else if (questionIndex == 1) {
+      check = 'Corerct Answer was: 640 acres = 1 square mile.';
+    } else if (questionIndex == 2) {
+      check = 'Corerct Answer was: A young horse = a duckling.';
+    } else if (questionIndex == 3) {
+      check = 'Corerct Answer was: The sound a Frog makes = croak.';
+    } else if (questionIndex > 3) {
+      check = 'Corerct Answer was: The synonym of scorn = despise.';
+    }
+    
+    print(check);
+  }
+}
