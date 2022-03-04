@@ -33,7 +33,7 @@ class _AppHomePageState extends State<AppHomePage> {
     } else if (questionIndex == 1) {
       check = 'Corerct Answer was: 640 acres = 1 square mile.';
     } else if (questionIndex == 2) {
-      check = 'Corerct Answer was: A young horse = a duckling.';
+      check = 'Corerct Answer was: A young horse = a foal.';
     } else if (questionIndex == 3) {
       check = 'Corerct Answer was: The sound a Frog makes = croak.';
     } else if (questionIndex > 3) {
@@ -78,7 +78,7 @@ class _AppHomePageState extends State<AppHomePage> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.caveat(
                   textStyle: Theme.of(context).textTheme.headline6,
-                  fontSize: 20,
+                  fontSize: 30,
                   fontWeight: FontWeight.w700,
                   color: Colors.blue.shade50,
                 ),
