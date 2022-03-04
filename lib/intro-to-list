@@ -1,5 +1,3 @@
-## Intro to List in Dart and Flutter
-
 void main() {
   
   IntroToList question = IntroToList();
@@ -16,10 +14,35 @@ void main() {
    * 
    * */
   
-   print(question.questions.firstWhere((i) => i.length > 1)); 
+  print(question.questions.firstWhere((i) => i.length > 1)); 
   // 640 acres equal 1 square mile.
-  question.checkAnswer(2); 
+  
+  print(question.questions.first);
+  // 640 acres equal 1 square mile.
+  
+  print(question.questions.every((element) => element.startsWith('a')));
+  // false
+  // because every element does not start with letter 'a'
+  
+  
+  
+  question.checkAnswer(1); 
   // Corerct Answer was: A young horse = a duckling.  
+  question.checkAnswer(3); 
+  // The synonym of scorn is despise.
+  
+  for (final q in question.questions) {
+    print(q);
+  }
+  
+  /**
+   * 640 acres equal 1 square mile.
+A young horse is called a duckling.
+The sound a Frog makes is known as croak.
+The synonym of scorn is despise.
+   * 
+   * 
+   *  */
   
 }
 
@@ -48,15 +71,19 @@ class IntroToList {
     if (questionIndex == 0) {
       check = '';
     } else if (questionIndex == 1) {
-      check = 'Corerct Answer was: 640 acres = 1 square mile.';
+      check = questions[questionIndex];
     } else if (questionIndex == 2) {
-      check = 'Corerct Answer was: A young horse = a duckling.';
+      check = questions[questionIndex];
     } else if (questionIndex == 3) {
-      check = 'Corerct Answer was: The sound a Frog makes = croak.';
+      check = questions[questionIndex];
     } else if (questionIndex > 3) {
-      check = 'Corerct Answer was: The synonym of scorn = despise.';
+      check = questions[questionIndex];
     }
     
     print(check);
   }
+  
+  
+  
+  
 }
