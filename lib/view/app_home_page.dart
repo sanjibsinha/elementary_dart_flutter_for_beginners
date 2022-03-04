@@ -78,7 +78,7 @@ class _AppHomePageState extends State<AppHomePage> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.caveat(
                   textStyle: Theme.of(context).textTheme.headline6,
-                  fontSize: 40,
+                  fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: Colors.blue.shade50,
                 ),
